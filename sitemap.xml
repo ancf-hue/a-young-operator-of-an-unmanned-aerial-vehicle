@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Главная страница -->
+  <url>
+    <loc>https://a-young-operator-of-an-unmanned-aer.vercel.app/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Урок 1: Знакомство с дроном и взлёт -->
+  <url>
+    <loc>https://ancf-hue.github.io/-Anti-AI-Qwen-UAV-Simulator-Lesson-1-Target-/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Урок 2: Зависание на высоте -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-2/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 3: Движение вперёд и назад -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-3/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 4: Движение влево и вправо -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-4/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 5: Повороты на месте -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-5/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 6: Полёт по квадрату -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-6/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 7: Посадка на мишень -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-7/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 8: Облёт статичных препятствий -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-8/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 9: Полёт сквозь кольцо -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-9/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 10: Восьмёрка -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-10/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 11: Действие ветра -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-11/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 12: Работа с камерой -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-12-/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 13: Ночной полёт -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-13/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 14: Полёт по приборам -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson--14-/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 15: Экстренная посадка -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-15/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 16: Потеря сигнала -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-16/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 17: Съёмка движущегося объекта -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-17/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 18: Полёт в тесном пространстве -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-18/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 19: Основы аэродинамики -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-19/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 20: Обслуживание дрона -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-20/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 21: Групповой полёт (Рой) -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-21/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 22: Картография местности -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-22/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 23: Симулятор отказа мотора -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-23/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 24: Прохождение полосы препятствий -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-24/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Урок 25: Финальный экзамен -->
+  <url>
+    <loc>https://ancf-hue.github.io/anti-ai-qwen-uav-simulator-lesson-25/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

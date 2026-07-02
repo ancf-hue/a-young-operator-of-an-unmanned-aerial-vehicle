@@ -1,0 +1,19 @@
+# robots.txt для курса "Юный оператор БПЛА"
+# https://a-young-operator-of-an-unmanned-aer.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию всех страниц
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+
+# Указываем путь к карте сайта
+Sitemap: https://a-young-operator-of-an-unmanned-aer.vercel.app/sitemap.xml
+
+# Альтернативный sitemap для GitHub Pages
+Sitemap: https://ancf-hue.github.io/sitemap.xml
+
+# Хост (для Яндекса)
+Host: a-young-operator-of-an-unmanned-aer.vercel.app
