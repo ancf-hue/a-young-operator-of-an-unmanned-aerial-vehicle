@@ -52,7 +52,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 12px; /* Лёгкое скругление углов как у иконки приложения */
+            border-radius: 12px;
             box-shadow: 
                 0 0 20px rgba(56, 189, 248, 0.6),
                 0 0 40px rgba(129, 140, 248, 0.4),
@@ -98,7 +98,7 @@
 
         .progress-container {
             width: 100%;
-            max-width: 1600px;
+            max-width: 1700px;
             margin: 20px auto;
             padding: 0 20px;
             display: flex;
@@ -136,26 +136,27 @@
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
 
-        /* Сетка: 5 колонок */
+        /* === СЕТКА: 5 КОЛОНОК === */
         .board {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 18px;
             padding: 20px;
-            max-width: 1600px;
+            max-width: 1700px;
             margin: 0 auto;
         }
 
-        @media (max-width: 1400px) {
+        /* Адаптивность — более гибкие пороги */
+        @media (max-width: 1200px) {
             .board { grid-template-columns: repeat(4, 1fr); }
         }
-        @media (max-width: 1100px) {
+        @media (max-width: 960px) {
             .board { grid-template-columns: repeat(3, 1fr); }
         }
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
             .board { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 500px) {
+        @media (max-width: 450px) {
             .board { grid-template-columns: 1fr; }
         }
 
@@ -169,6 +170,7 @@
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             display: flex;
             flex-direction: column;
+            min-width: 0; /* Важно для корректного сжатия в Grid */
         }
 
         .card:hover {
