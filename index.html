@@ -44,7 +44,6 @@
             gap: 15px;
         }
 
-        /* === КВАДРАТНЫЙ ЛОГОТИП ПО ЦЕНТРУ === */
         .header-icon {
             width: 80px;
             height: 80px;
@@ -136,7 +135,6 @@
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
 
-        /* === СЕТКА: 5 КОЛОНОК === */
         .board {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -146,7 +144,6 @@
             margin: 0 auto;
         }
 
-        /* Адаптивность — более гибкие пороги */
         @media (max-width: 1200px) {
             .board { grid-template-columns: repeat(4, 1fr); }
         }
@@ -167,10 +164,10 @@
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 16px;
             padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, background 0.3s;
             display: flex;
             flex-direction: column;
-            min-width: 0; /* Важно для корректного сжатия в Grid */
+            min-width: 0;
         }
 
         .card:hover {
@@ -185,6 +182,7 @@
             font-size: 1.05rem;
             line-height: 1.3;
             min-height: 50px;
+            transition: color 0.3s;
         }
 
         .card p {
@@ -195,7 +193,6 @@
             font-size: 0.9rem;
         }
 
-        /* === СТЕКЛЯННЫЕ 3D-КНОПКИ С ПЕРЕЛИВОМ === */
         .btn-glass {
             position: relative;
             display: block;
@@ -316,6 +313,12 @@
         .completed {
             background: rgba(34, 197, 94, 0.08);
             border-color: rgba(34, 197, 94, 0.5);
+            animation: completePulse 0.5s ease;
+        }
+
+        @keyframes completePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
 
         .completed h3 {
@@ -325,6 +328,25 @@
         .completed .btn-complete {
             background: rgba(34, 197, 94, 0.3);
             color: white;
+        }
+
+        .reset-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .reset-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
         }
 
         footer {
@@ -351,6 +373,8 @@
     </div>
 
     <main class="board" id="board"></main>
+
+    <button class="reset-btn" id="resetBtn" aria-label="Сбросить прогресс">🔄 Сбросить прогресс</button>
 
     <footer>
         <p>Anti-AI Qwen Academy | Проект Антона Кузнецова</p>
@@ -385,9 +409,17 @@
             { id: 25, repo: "anti-ai-qwen-uav-simulator-lesson-25", title: "Финальный экзамен «Спасательная операция»", desc: "Миссия: найди в лесу потерявшегося котёнка, подлети к нему и сфотографируй для спасателей!" }
         ];
 
+        // Проверка на дубликаты id (для отладки)
+        const ids = lessons.map(l => l.id);
+        const duplicates = ids.filter((id, i) => ids.indexOf(id) !== i);
+        if (duplicates.length > 0) {
+            console.warn('Найдены дубликаты id:', duplicates);
+        }
+
         const board = document.getElementById('board');
         const progressFill = document.getElementById('progressFill');
         const progressText = document.getElementById('progressText');
+        const resetBtn = document.getElementById('resetBtn');
 
         let completedLessons = JSON.parse(localStorage.getItem('uav-completed') || '[]');
 
@@ -397,39 +429,53 @@
             progressText.textContent = `Пройдено: ${completedLessons.length} из ${lessons.length}`;
         }
 
-        lessons.forEach(lesson => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            if (completedLessons.includes(lesson.id)) {
-                card.classList.add('completed');
-            }
-
-            card.innerHTML = `
-                <h3>Урок ${lesson.id}: ${lesson.title}</h3>
-                <p>${lesson.desc}</p>
-                <a href="https://ancf-hue.github.io/${lesson.repo}/" target="_blank" class="btn-glass">🚀 Открыть симулятор</a>
-                <button class="btn-glass btn-complete">${completedLessons.includes(lesson.id) ? '✓ Выполнено' : 'Отметить как выполненное'}</button>
-            `;
-
-            const completeBtn = card.querySelector('.btn-complete');
-            completeBtn.addEventListener('click', () => {
+        function renderCards() {
+            board.innerHTML = '';
+            lessons.forEach(lesson => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.setAttribute('data-id', lesson.id);
+                
                 if (completedLessons.includes(lesson.id)) {
-                    completedLessons = completedLessons.filter(id => id !== lesson.id);
-                    card.classList.remove('completed');
-                    completeBtn.textContent = 'Отметить как выполненное';
-                } else {
-                    completedLessons.push(lesson.id);
                     card.classList.add('completed');
-                    completeBtn.textContent = '✓ Выполнено';
                 }
-                localStorage.setItem('uav-completed', JSON.stringify(completedLessons));
-                updateProgress();
-            });
 
-            board.appendChild(card);
+                card.innerHTML = `
+                    <h3>Урок ${lesson.id}: ${lesson.title}</h3>
+                    <p>${lesson.desc}</p>
+                    <a href="https://ancf-hue.github.io/${lesson.repo}/" target="_blank" class="btn-glass" aria-label="Открыть симулятор урока ${lesson.id}">🚀 Открыть симулятор</a>
+                    <button class="btn-glass btn-complete" aria-label="Отметить урок ${lesson.id} как выполненный">${completedLessons.includes(lesson.id) ? '✓ Выполнено' : 'Отметить как выполненное'}</button>
+                `;
+
+                const completeBtn = card.querySelector('.btn-complete');
+                completeBtn.addEventListener('click', () => {
+                    if (completedLessons.includes(lesson.id)) {
+                        completedLessons = completedLessons.filter(id => id !== lesson.id);
+                        card.classList.remove('completed');
+                        completeBtn.textContent = 'Отметить как выполненное';
+                    } else {
+                        completedLessons.push(lesson.id);
+                        card.classList.add('completed');
+                        completeBtn.textContent = '✓ Выполнено';
+                    }
+                    localStorage.setItem('uav-completed', JSON.stringify(completedLessons));
+                    updateProgress();
+                });
+
+                board.appendChild(card);
+            });
+        }
+
+        resetBtn.addEventListener('click', () => {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс?')) {
+                completedLessons = [];
+                localStorage.removeItem('uav-completed');
+                renderCards();
+                updateProgress();
+            }
         });
 
+        renderCards();
         updateProgress();
     </script>
 </body>
